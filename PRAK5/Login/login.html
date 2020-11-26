@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form</title>
+		<script type="text/javascript" src="JS/otentikasi.js"></script>
+		<style>
+			body {
+				background: #64eaf3;
+			}
+			#Kerangka{
+	            font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	            font-size: 30px;
+	            color: #000000;
+	            font-weight: bold;
+                padding-top: 10px;
+			}
+			#kerangka-title {
+				font-family: "Raleway Thin", sans-serif;
+      			text-align: center;
+    			color: #3c0af3;
+    			margin-bottom: 30px;
+    			text-transform: uppercase;
+    			border-bottom: 4px solid #095563;
+			}
+			.form_login{
+				/*membuat lebar form penuh*/
+    			width: calc(100% - 20px);
+    			padding: 8px 10px;
+    			margin-bottom: 15px;
+    			border: none;
+    			background-color: transparent;
+    			border-bottom: 2px solid #2979ff;
+    			color: #3c0af3;
+    			font-size: 20px;}
+ 
+			.tombol_login{
+    			width: 100%;
+    			padding: 5px 0;
+    			border: none;
+    			background-color:#095563;
+    			font-size: 18px;
+    			color: #f5f4f8;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<!-- Kerangka -->
+		<div id="kerangka">
+			<!-- Header Form -->
+			<div id="card-content">
+  				<div id="kerangka-title">
+    				<h1>LOGIN FORM</h1>
+    				<div class="underline-title"></div>
+  				</div>
+			</div>
+			<!-- Form Login -->
+			<form method="request">	
+				<input type="text" id="username" name="username" class="form_login" placeholder="Username or Email ">
+				<input type="password" id="password" name="password" class="form_login" placeholder="Password ">
+ 
+				<input type="submit" class="tombol_login" onClick="return validasi()" value="LOGIN">
+			</form>
+			
+		</div>
+
+
+	</body>
+	<!-- Validasi Login -->
+	
+	
+</html>

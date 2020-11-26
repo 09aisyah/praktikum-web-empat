@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Chat Message</title>
+		<style type="text/css">
+            body{
+				background-color: #81e2ff;
+            }
+            h2{
+	            font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	            font-size: 30px;
+	            background-color: #f7a308;
+				color:  #81e2ff;
+	            font-weight: bold;
+				padding-top: 10px;
+				text-align: center;
+			}
+			.msguser{
+				width: 200px;
+				height: 30px;
+				border-color: #f7a308;
+				text-align: center;
+			}
+			.namauser{
+				width: 200px;
+				height: 25px;
+				border-color: #f7a308;
+				text-align: center;
+			}
+			.tombol_login{
+				width: 200px;
+				height: 25px;
+				border-color: #f7a308;
+				text-align: center;
+			}
+			#kerangka-title {
+				font-family: "Raleway Thin", sans-serif;
+    			letter-spacing: 2px;
+    			padding-bottom: 23px;
+				padding-top: 13px;
+    			text-align: center;
+			}
+			.underline-title {
+    			background: -webkit-linear-gradient(right, #f7a308, #e67e22);
+    			height: 3px;
+    			margin: 5px auto 0 auto;
+    			width: 950px;
+			}
+        </style>
+	</head>
+
+	<body>
+	<center>
+		<script>
+            alert("WELCOME!");
+        </script>
+		<div id="kerangka">
+			<!-- Header Form -->
+			<div id="card-content">
+  				<div id="kerangka-title">
+    				<h2>Chat Message</h2>
+    				<div class="underline-title"></div>
+  				</div>
+			</div>
+     			<form name="nama" action="">
+        			<input name="namauser" type="text" id="namauser" class="namauser" placeholder="Nama Anda" />
+    			</form>
+				<br>
+				<br>
+    			<div id="chatbox"></div>
+				
+					<input name="usermsg" type="text" id="usermsg" class="msguser" placeholder="Pesan" />
+					<br>
+					<br>
+        			<input name="submitmsg" class="tombol_login" type="submit" id="submitmsg" value="Send" />
+			</div>
+			<!-- Form Chat -->
+		</div>
+	</center>
+	</body>
+	<script>
+		var chatbox = document.getElementById("chatbox");
+		var usermsg = document.getElementById("usermsg");
+		var namauser = document.getElementById("namauser");
+		var submitmsg = document.getElementById("submitmsg");
+
+		submitmsg.addEventListener("click", function(){
+		var newMessage = document.createElement("li");
+		newMessage.innerHTML = namauser.value + " : " + usermsg.value;
+		chatbox.appendChild(newMessage);
+		usermsg.value = "";
+		});
+	</script>
+</html>

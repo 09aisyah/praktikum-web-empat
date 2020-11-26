@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>	
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Picker</title>
+        <style>
+            body{
+                background-color: #03c6f7;
+            }
+            h1{
+				font-family: "Raleway Thin", sans-serif;
+                text-align: center;
+                background-color: #095563;
+    			color: #03c6f7;
+    			margin-bottom: 30px;
+    			text-transform: uppercase;
+    			border-bottom: 4px solid #095563;
+            }
+            .form_gambar{
+                /*membuat lebar form penuh*/
+                font-family: "Raleway Thin", sans-serif;
+                text-align: center;
+                width: calc(100% - 20px);
+                padding: 8px 10px;
+                margin-bottom: 15px;
+                border: black;
+                background-color: #095563;
+                border-bottom: 2px solid #2979ff;
+                color: #fff;
+                font-size: 20px;}
+        </style>
+    </head>
+        <body style="margin: 50px"> 	
+        <center>		
+            <h1> Image Picker </h1>
+            <select onchange="gantigambar();" class="form_gambar" id="listgambar">			
+                <option value="kafe.jpg">PILIH MAKANAN</option>			
+                <option value="Batagor.jpg">BATAGOR</option>			
+                <option value="burger.jpg">BURGER</option>			
+                <option value="kebab.jpg">KEBAB</option>			
+                <option value="martabak.jpg">MARTABAK</option>	
+                <option value="pizza.jpg">PIZZA</option>
+                <option value="Seblak.jpg">SEBLAK</option>	
+                <option value="somay.jpg">SOMAY</option>	
+                <option value="spaghetti.jpg">SPAGHETTI</option>		
+            </select>	
+        </center>		
+            <br/>	
+            <img src="kafe.jpg" style="width: 100%" id="gambar">
+         </body>
+         <script type="text/javascript">	
+         function gantigambar()
+          {		
+              let gambar = document.getElementById("listgambar").value;		
+              document.getElementById("gambar").src = gambar;		
+              alert("Ini Gambar " + gambar);	  
+            }
+        </script>
+</html>

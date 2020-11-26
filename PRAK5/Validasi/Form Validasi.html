@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Form Validation</title>      
+        <style>
+            body{
+               background-color: #072729;
+            }
+            #ehem{
+               font-family: "Raleway Thin", sans-serif;
+      			text-align: center;
+    			   color: #03fafa;
+    			   margin-bottom: 30px;
+    			   text-transform: uppercase;
+    			   border-bottom: 4px solid #095563;
+            }
+            .form_validasi{
+               width: calc(100% - 50px);
+               padding: 80px 10px;
+               margin-bottom: 30px;
+               border: none;
+               background-color: #072729;
+               color: rgb(7, 239, 247);
+               box-shadow: 0 0 50px rgb(7, 239, 247)}
+        </style>   
+   </head>
+   
+   <body>
+   <center>
+      <script>
+         alert("WELCOME!");
+     </script>
+      <div id="ehem">
+         <h2>TICKET</h2>
+         <div class="underline-title"></div>
+         </div>
+      <form action = "/cgi-bin/test.cgi" name = "myForm" class="form_validasi" onsubmit = "return(validate());">
+         <table cellspacing = "5" cellpadding = "5" border = "10">
+            
+            <tr>
+               <td align = "center">Nama</td>
+               <td><input type = "text" name = "Name" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "center">E-Mail</td>
+               <td><input type = "text" name = "EMail" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "center">Tiket</td>
+               <td><input type = "text" name = "Tiket" /></td>
+            </tr>
+            
+            <tr>
+                <td align = "center">Jam</td>
+                <td><input type = "time" name = "Jam" required/></td>
+             </tr>
+
+            <tr>
+               <td align = "center">Tujuan</td>
+               <td>
+                  <select name = "Tujuan">
+                     <option value = "-1" selected>[choose yours]</option>
+                     <option value = "1">Jepang</option>
+                     <option value = "2">Korea</option>
+                     <option value = "3">Turki</option>
+                     <option value = "4">Iran</option>
+                     <option value = "5">Perancis</option>
+                  </select>
+               </td>
+            </tr>
+            
+            <tr>
+               <td align = "center"></td>
+               <td><input type = "submit" /></td>
+            </tr>
+            
+         </table>
+   </center>
+      </form>
+   </body>
+   <script>
+      function maxlength(evt) {
+	var panjangnama = document.getElementById("name").value;
+	if (panjangnama.length >= 30  ){
+		window.alert("Max Length 30");
+		return false;
+	}
+}
+
+// Anka Only
+function angka(e) {
+  var max = document.getElementById("tiket").value;
+  if (!/^[0-9]+$/.test(e.value)) {
+	window.alert("Tolong Masukkan jumlah tiket dengan benar");
+    e.value = e.value.substring(0,e.value.length-1);
+	max.length = 2;
+  }
+}
+
+// Validasi Input
+function validasi() {
+	var nama = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var jam  = document.getElementById("jam").value;
+	var tujuan  = document.getElementById("tujuan").value;
+	var tiket = document.getElementById("tiket").value;
+	
+	if (nama && email && jam  && tujuan  && tiket ) {
+		document.getElementById("chatbox").innerHTML= "Nama : " + nama + "<br>" + "Email : " + email + "<br>" + "Jam Berangkat : " + jam + "<br>" + "Tujuan : " +tujuan + "<br>" + "Jumlah Tiket : " + tiket + "<br><br>" + "Selamat Traveling";
+		return false;
+	}else{
+		alert("Data Belum Lengkap, Harap Isi dengan Benar");
+	}	
+}
+   </script>
+</html>
